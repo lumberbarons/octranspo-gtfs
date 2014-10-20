@@ -1,0 +1,20 @@
+create table routes(route_id TEXT,route_short_name TEXT,
+                    route_long_name TEXT,route_desc TEXT,route_type NUMERIC,
+                    route_url TEXT);
+create table stops(stop_id TEXT,stop_code TEXT,stop_name TEXT,
+                   stop_desc TEXT,stop_lat REAL,stop_lon REAL,
+                   zone_id NUMERIC,stop_url TEXT,location_type NUMERIC,parent_station NUMERIC);
+create table stop_times(trip_id TEXT,arrival_time TEXT,departure_time TEXT,
+                        stop_id TEXT,stop_sequence NUMERIC,pickup_type NUMERIC,drop_off_type NUMERIC);                   
+create table trips(route_id TEXT,service_id TEXT,trip_id TEXT,
+                   trip_headsign TEXT,direction_id NUMERIC,
+                   block_id TEXT);
+.separator ','
+.import gtfs/routes.txt routes
+.import gtfs/stops.txt stops
+.import gtfs/stop_times.txt stop_times
+.import gtfs/trips.txt trips
+delete from routes where route_short_name like 'route_short_name';
+delete from stops where stop_code like 'stop_code';
+delete from stop_times where arrival_time like 'arrival_time';
+delete from trips where service_id like 'service_id';

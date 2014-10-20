@@ -1,0 +1,28 @@
+{
+    "name": "octranspo-gtfs",
+    "version": "0.0.1",
+    "description": "Simple handler for the OC Transpo GTFS data"
+    "keywords": [
+        "octranspo",
+        "ottawa",
+        "bus",
+        "lrt",
+        "transit",
+        "gtfs"
+    ],
+    "author": "James Ellwood <jellwood@gmail.com>",
+    "engines": {
+      "node": ">=0.10"
+    },
+    "main": "lib/index.js",
+    "dependencies": {
+        "sqlite3": ">= 3.0.2"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git@github.com:lumberbarons/octranspo-gtfs.git"
+    },
+    "bugs": {
+        "url": "https://github.com/lumberbarons/octranspo-gtfs/issues"
+    }
+}
